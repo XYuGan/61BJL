@@ -5,13 +5,15 @@ import byog.TileEngine.TETile;
 import byog.TileEngine.Tileset;
 import edu.princeton.cs.introcs.StdDraw;
 import javafx.geometry.Pos;
+
+import java.awt.*;
 import java.util.Random;
 
 public class Game {
     TERenderer ter = new TERenderer();
     /* Feel free to change the width and height. */
     public static final int WIDTH = 80;
-    public static final int HEIGHT = 60;
+    public static final int HEIGHT = 40;
     private int RoomNUM;
 
     private static class Room{
@@ -35,14 +37,21 @@ public class Game {
      * Method used for playing a fresh game. The game should start from the main menu.
      */
     public void playWithKeyboard() {
+
         ter.initialize(WIDTH, HEIGHT);
         textStartPage();
+
 
     }
 
     public void textStartPage(){
-
+        Font font = new Font("Monaco", Font.BOLD, 50);
+        StdDraw.setFont(font);
+        StdDraw.setPenColor(100, 100, 100);
         StdDraw.text(WIDTH /2, HEIGHT - 5, "CS61B: xiaotaiyang's game"  );
+        Font font2 = new Font("Monaco", Font.BOLD, 30);
+        StdDraw.setFont(font2);
+        StdDraw.text(WIDTH /2, HEIGHT - 20, "便便太阳的迷宫"  );
         StdDraw.show();
     }
     /**
